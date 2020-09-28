@@ -18,7 +18,11 @@
             <h2>Part 2: JSON.parse</h2>
 
 <?php
-            $emp = ["id" => 1, "name" => "Kiran", "address" => "48 Rowan Court"];
+            $emp =
+            [
+                ["id" => 1, "name" => "Kiran", "address" => "48 Rowan Court"],
+                ["id" => 2, "name" => "Derek", "address" => "48 Rowan Court"]
+            ];
             $json = json_encode($emp);
             echo "<div id='emp' style='display:none'>" . $json . "</div>"
 ?>
@@ -28,11 +32,13 @@
     </body>
 
     <script type="text/javascript">
-        
-        //var emp = <?php echo $json; ?>;
-        var emp = JSON.parse(document.getElementById('emp').innerHTML);
 
-        console.log(emp.id + ' - ' + emp.name + ' - ' + emp.address);
+        var emps = JSON.parse(document.getElementById('emp').innerHTML);
+
+        emps.forEach(function(emp)
+        {
+            console.log(emp.id + ' - ' + emp.name + ' - ' + emp.address);
+        })
 
     </script>
 
