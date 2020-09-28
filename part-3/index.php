@@ -6,7 +6,7 @@
         <title>JSON in PHP And JavaScript</title>
 
         <!-- Include AJAX -->
-        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
 
     </head>
 
