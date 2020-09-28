@@ -1,10 +1,11 @@
 <?php
 
-    //print_r($_POST);
+    // Use second argument to specify if an aray is returned instead of an object i.e. use $emp['name'] instead of $emp->name
+    $emps = json_decode($_POST['emps'], false);
 
-    if($_POST)
+    foreach($emps as $emp)
     {
-        echo $_POST['name'];
+        print_r($emp->name . '<br>');
     }
 
 ?>

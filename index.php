@@ -21,20 +21,35 @@
 
     <script type="text/javascript">
         
-        // Create a blank object
+        // Create a blank objects
         var emp1 = {};
+        var emp2 = {};
 
+        // Create empty array
+        var emps = [];
+
+        // Define properties for employee 1
         emp1.id = 1;
         emp1.name = 'Kiran';
         emp1.address = '48 Rowan Court';
 
-        console.log(emp1);
+        // Define properties for employee 2
+        emp2.id = 2;
+        emp2.name = 'Derek';
+        emp2.address = '48 Rowan Court';
+
+        // Add objects to array
+        emps.push(emp1);
+        emps.push(emp2);
+
+        // Output to console screen
+        console.log(emps);
 
         $.ajax(
         {
             url: "readJson.php",
             method: "post",
-            data: emp1,
+            data: { emps : JSON.stringify(emps) },
             success: function(res)
             {
                 console.log(res);
